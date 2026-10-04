@@ -1,0 +1,76 @@
+/* Pearl Panda adaptation of Motiq Decrypt Text. All styles stay component-scoped. */
+.decrypt-text {
+  color: inherit;
+}
+
+.decrypt-text__accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.decrypt-text__visual {
+  font: inherit;
+  white-space: pre-wrap;
+}
+
+.decrypt-text__word {
+  display: inline-block;
+  white-space: pre;
+}
+
+.decrypt-text__cell {
+  position: relative;
+  display: inline-block;
+}
+
+.decrypt-text__measure {
+  visibility: hidden;
+}
+
+.decrypt-text__glyph {
+  position: absolute;
+  inset: 0;
+  color: inherit;
+  text-align: center;
+}
+
+.decrypt-text__glyph[data-state="scramble"] {
+  opacity: 0.42;
+}
+
+.decrypt-text__glyph[data-state="lock"] {
+  animation: pearl-decrypt-lock 420ms cubic-bezier(.2, 0, 0, 1);
+}
+
+.decrypt-text[data-paused="true"] .decrypt-text__glyph {
+  animation-play-state: paused;
+}
+
+.decrypt-text[data-motion="static"] .decrypt-text__glyph {
+  animation: none;
+  opacity: 1;
+}
+
+@keyframes pearl-decrypt-lock {
+  0% {
+    color: var(--decrypt-accent, #6d8c55);
+    text-shadow: 0 0 0.35em color-mix(in srgb, var(--decrypt-accent, #6d8c55) 35%, transparent);
+  }
+  100% {
+    color: inherit;
+    text-shadow: 0 0 0 transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .decrypt-text__glyph[data-state="lock"] {
+    animation: none;
+  }
+}

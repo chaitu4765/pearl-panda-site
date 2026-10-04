@@ -1,0 +1,50 @@
+.target-cursor-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 2147483646;
+  opacity: 0;
+  visibility: hidden;
+  mix-blend-mode: normal;
+  will-change: transform;
+}
+
+.target-cursor-wrapper[data-enabled='true'][data-visible='true'] { opacity: 1; visibility: visible; }
+.target-cursor-dot {
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #f8faeecc;
+  will-change: transform;
+}
+.target-cursor-corner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  border: 2px solid #174630;
+  filter: drop-shadow(0 0 1px #fffff5);
+  will-change: transform;
+}
+.target-cursor-corner.corner-tl { border-right: none; border-bottom: none; }
+.target-cursor-corner.corner-tr { border-left: none; border-bottom: none; }
+.target-cursor-corner.corner-br { border-left: none; border-top: none; }
+.target-cursor-corner.corner-bl { border-right: none; border-top: none; }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body.pp-target-cursor-active,
+  body.pp-target-cursor-active * { cursor: none !important; }
+  body.pp-target-cursor-active :is(input, textarea, select, [contenteditable]:not([contenteditable='false']), [role='textbox']),
+  body.pp-target-cursor-active :is([contenteditable]:not([contenteditable='false']), [role='textbox']) * { cursor: auto !important; }
+}
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .target-cursor-wrapper { display: none !important; }
+}
