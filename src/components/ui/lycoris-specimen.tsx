@@ -116,7 +116,7 @@ export default function LycorisSpecimen() {
       <span className="hero-coordinate" aria-hidden="true">THOUGHTFULLY DIGITAL. NATURALLY DIFFERENT.</span>
       <div className="hero-availability"><span className="status-dot" /> Open for good projects</div>
       <div className="panda-object" ref={objectRef}>
-        <Suspense fallback={<img className="panda-fallback" src="/brand/pearl-panda-original.png" alt="Pearl Panda holding bamboo" />}>
+        <Suspense fallback={<img className="panda-fallback" src="/media/logo.svg" alt="Pearl Panda holding bamboo" />}>
           <PandaScene scene={active} reducedMotion={reduced || motionPaused} atomizationRef={atomizationRef} />
         </Suspense>
       </div>

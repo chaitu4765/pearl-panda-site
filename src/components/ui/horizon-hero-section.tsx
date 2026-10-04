@@ -99,7 +99,7 @@ export default function HorizonHeroSection() {
   return <section className="horizon-hero" ref={rootRef} aria-label="Pearl Panda: a universe of growth">
     <div className="horizon-stage" ref={stageRef}>
       <div className="horizon-world" aria-hidden="true">
-        <Suspense fallback={<div className="horizon-loading-art"><img src="/brand/pearl-panda-original.png" alt="" /></div>}>
+        <Suspense fallback={<div className="horizon-loading-art"><img src="/media/logo.svg" alt="" /></div>}>
           <HorizonScene progressRef={progressRef} reducedMotion={reduced} paused={paused} />
         </Suspense>
       </div>

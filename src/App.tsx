@@ -1,20 +1,16 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { ArrowUpRight, Menu, X, ArrowUp, Leaf } from 'lucide-react'
 import Home from '@/pages/Home'
 import { AboutPage, ContactPage, IndustriesPage, NotFoundPage, ServicesPage, WorkPage } from '@/pages/InnerPages'
 import { CursorHalo, RouteEffects } from '@/components/ui/interactive'
 
-const TargetCursor = lazy(() => import('@/components/ui/target-cursor'))
-
 function PageCursor() {
-  const { pathname } = useLocation()
-  if (pathname.replace(/\/+$/, '') !== '/services') return <CursorHalo />
-  return <Suspense fallback={null}><TargetCursor targetSelector=".services-page .ip-service-card, .services-page .ip-social-list > div, a[href], button:not(:disabled)" spinDuration={2} parallaxOn /></Suspense>
+  return <CursorHalo />
 }
 
 function Brand() {
-  return <Link to="/" className="brand" aria-label="Pearl Panda home"><span className="brand-icon"><img src="/favicon.svg" width="38" height="38" alt="" /></span><span>pearl panda<span className="brand-period">.</span><small>THOUGHTFULLY DIGITAL</small></span></Link>
+  return <Link to="/" className="brand" aria-label="Pearl Panda home"><span className="brand-icon"><img src="/media/logo-mark.svg" width="38" height="38" alt="" /></span><span>pearl panda<span className="brand-period">.</span><small>THOUGHTFULLY DIGITAL</small></span></Link>
 }
 function Header() {
   const [open, setOpen] = useState(false)

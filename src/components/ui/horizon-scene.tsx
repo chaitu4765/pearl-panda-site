@@ -522,7 +522,7 @@ export default function HorizonScene({ progressRef, reducedMotion = false, pause
       {fallback && (
         <div role="img" aria-label="Pearl Panda bamboo logo beneath a green night sky" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 74% 45%, #38513288, transparent 56%)' }}>
           <style>{'.horizon-scene[data-mobile="true"] .horizon-fallback-logo{width:55%!important;right:22.5%!important;top:53%!important}'}</style>
-          <img className="horizon-fallback-logo" src="/brand/pearl-panda-original.png" alt="" style={{ position: 'absolute', width: 'min(28vw, 310px)', height: 'auto', right: '11%', top: '32%', borderRadius: '48%', opacity: 0.86 }} />
+          <img className="horizon-fallback-logo" src="/media/logo.svg" alt="" style={{ position: 'absolute', width: 'min(28vw, 310px)', height: 'auto', right: '11%', top: '32%', borderRadius: '48%', opacity: 0.86 }} />
         </div>
       )}
     </div>

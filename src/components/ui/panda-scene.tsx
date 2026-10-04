@@ -275,7 +275,7 @@ export default function PandaScene({ className = '', reducedMotion = false, scen
         style={{ display: unavailable ? 'none' : 'block', width: '100%', height: '100%', cursor: 'grab', touchAction: 'pan-y' }}
       />
       {unavailable && (
-        <img src="/brand/pearl-panda-original.png" alt="Pearl Panda hugging a leafy bamboo stem" style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }} />
+        <img src="/media/logo.svg" alt="Pearl Panda hugging a leafy bamboo stem" style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }} />
       )}
     </div>
   )

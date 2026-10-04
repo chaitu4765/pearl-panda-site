@@ -4,3 +4,4 @@ tmp/
 *.tsbuildinfo
 .env
 .env.local
+.impeccable/
